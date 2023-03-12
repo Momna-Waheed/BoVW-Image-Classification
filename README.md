@@ -26,18 +26,17 @@ This project aimed to demonstrate the use of BoVW for image classification using
 
 BoVW model represents images as visual words that act as describing features of the images and based on the histogram of count of each feature in an image it is classified into a specific class. Following steps are involved in performing the image classification task with the use of BoVW. 
 	
-\begin{enumerate}[1.]
-\item  Data Preparation : The first step involves reading the dataset and processing it into a desirable form. Both datasets comprised of multiple classes having images of different dimensions thus all the images were transformed into a standard shape of 256x256. The images in the dataset were all 3 channel RGB images and thus for the sake of simplicity images were converted into single channel gray scale images. 
+- Data Preparation : The first step involves reading the dataset and processing it into a desirable form. Both datasets comprised of multiple classes having images of different dimensions thus all the images were transformed into a standard shape of 256x256. The images in the dataset were all 3 channel RGB images and thus for the sake of simplicity images were converted into single channel gray scale images. 
 
-\item Feature Extraction : Next step is to extract key points and descriptive features from the images. For that matter sift classifier is used. Two lists were maintained. One having features of all the images vertically stacked together and the other list having index wise features placed in it for each image along with its label. 
+- Feature Extraction : Next step is to extract key points and descriptive features from the images. For that matter sift classifier is used. Two lists were maintained. One having features of all the images vertically stacked together and the other list having index wise features placed in it for each image along with its label. 
 
-\item Codebook/Vocablary Generation: Next step is the generation of clusters of similar features to develop the vocablary of all the visual words in the data set. This is done by applying k-mean clustering on the features extracted from the images. The number of clusters depends on the dataset and there are several methods to analyze the optimal value of clusters for a given dataset including elbow method , gap statistics methods etc. Here, elbow method was applied and the  values in the surrounding window of k value given by it were tested and the value with the best results was chosen.
+- Codebook/Vocablary Generation: Next step is the generation of clusters of similar features to develop the vocablary of all the visual words in the data set. This is done by applying k-mean clustering on the features extracted from the images. The number of clusters depends on the dataset and there are several methods to analyze the optimal value of clusters for a given dataset including elbow method , gap statistics methods etc. Here, elbow method was applied and the  values in the surrounding window of k value given by it were tested and the value with the best results was chosen.
 
-\item Histogram : In this step a histogram for each image is computed having the counts of visual words from the vocablary.
+- Histogram : In this step a histogram for each image is computed having the counts of visual words from the vocablary.
 
-\item Classification: Lastly, the histograms computed in the previous step are used to train and test the model. The model is trained to classify the image into class with which it's histogram has maximum similarity. The dataset is split into training and testing data to evaluate the model's performance
+- Classification: Lastly, the histograms computed in the previous step are used to train and test the model. The model is trained to classify the image into class with which it's histogram has maximum similarity. The dataset is split into training and testing data to evaluate the model's performance
 
-\item Analyzing Performance measures: The testing results obtained by the trained model are then used to generate classification report and confusion matrix to analyze the values of model against each performance measure.
+- Analyzing Performance measures: The testing results obtained by the trained model are then used to generate classification report and confusion matrix to analyze the values of model against each performance measure.
 
 
 
