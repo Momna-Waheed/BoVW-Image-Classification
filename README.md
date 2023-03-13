@@ -40,3 +40,4 @@ BoVW model represents images as visual words that act as describing features of 
 
 
 ![Example image](FlowDiagram.png)
+
